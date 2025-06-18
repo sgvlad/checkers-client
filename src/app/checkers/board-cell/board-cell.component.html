@@ -1,0 +1,14 @@
+<td
+  [ngClass]="{
+        'dark-cell': isDark(),
+        'light-cell': !isDark(),
+        'selected-cell': isSelected()
+      }"
+  (click)="handleClick()"
+>
+  @if (piece()) {
+    <span class="piece" [ngClass]="piece()?.color?.toLowerCase()">
+          {{ piece()?.color === Color.WHITE ? '◯' : '⬤' }}{{ piece()?.king ? '👑' : '' }}
+        </span>
+  }
+</td>

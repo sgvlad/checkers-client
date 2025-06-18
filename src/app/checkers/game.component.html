@@ -1,0 +1,18 @@
+Player turn: {{ playersTurn() }}
+
+
+<table class="checkers-board">
+  <tbody>
+    @for (row of gameGridSignal(); track rowIndex; let rowIndex = $index) {
+      <tr>
+        @for (cell of row; track colIndex; let colIndex = $index) {
+          <app-board-cell
+            [piece]="cell"
+            [row]="rowIndex"
+            [col]="colIndex"
+          />
+        }
+      </tr>
+    }
+  </tbody>
+</table>
